@@ -9,6 +9,6 @@ export const Loader = (props: LoaderProps) => {
   const { className } = props
 
   return (
-    <div className={classNames('lds-hourglass', {}, [className])}></div>
+    <div className={classNames('lds-hourglass', {}, [className])} />
   )
 }

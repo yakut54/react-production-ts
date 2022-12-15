@@ -9,8 +9,8 @@
     "build:dev": "webpack --env mode=development",
     "lint:ts": "eslint --config ./config/eslint/.eslintrc.js --quiet \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint --config ./config/eslint/.eslintrc.js --quiet \"**/*.{ts,tsx}\" --fix",
-    "stylelint:scss": "npx stylelint --config ./config/stylelint/.stylelintrc.json \"**/*.scss\"",
-    "stylelint:scss:fix": "npx stylelint --config ./config/stylelint/.stylelintrc.json \"**/*.scss\" --fix",
+    "lint:scss": "npx stylelint --config ./config/stylelint/.stylelintrc.json \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint --config ./config/stylelint/.stylelintrc.json \"**/*.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
