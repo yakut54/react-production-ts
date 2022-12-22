@@ -17,9 +17,6 @@ export function Navbar(props: NavbarProps) {
         <AppLink to="/" className={cls.mainLink} theme={AppLinkTheme.SECONDARY}>
           {t('Главная')}
         </AppLink>
-        <AppLink to="/about" theme={AppLinkTheme.SECONDARY}>
-          {t('О Сайте')}
-        </AppLink>
       </div>
     </div>
   )

@@ -23,7 +23,10 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new ReactRefreshPlugin({ overlay: false }))
-    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }))
+    plugins.push(new BundleAnalyzerPlugin({ 
+      analyzerPort: 5001,
+      openAnalyzer: false 
+    }))
   }
 
   return plugins
