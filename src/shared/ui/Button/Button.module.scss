@@ -4,18 +4,23 @@
 }
 .Button:not(.square) { padding: 6px 15px; }
 
-.clear {
+.clear,
+.clearInverted {
   padding: 0;
   margin: 0;
   background: none;
   outline: none;
   border: none;
+  color: var(--primary-color);
+}
+
+.clearInverted {
   color: var(--inverted-primary-color);
 }
 
 .outline {
   border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  color: var(--secondary-color);
   background: none;
 }
 

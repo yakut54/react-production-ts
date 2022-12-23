@@ -19,9 +19,10 @@ export function LangSwitcher(props: LangSwitcherProps) {
   return (
     <Button
       className={classNames(cls.LangSwitcher, {}, [className])}
-      theme={ButtonTheme.CLEAR}
+      theme={ButtonTheme.CLEAR_INVERTED}
       onClick={toggle}
     >
+      {/* i18next-extract-disable-next-line */}
       {t(short ? 'Короткий Язык' : 'Язык')}
     </Button>
   )
