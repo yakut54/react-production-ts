@@ -39,7 +39,7 @@ export function Sidebar(props: SidebarProps) {
         size={ButtonSize.XL}
         square
       >
-        {t(collapsed ? '>' : '<')}
+        {collapsed ? '>' : '<'}
       </Button>
       <div className={cls.items}>
         <AppLink

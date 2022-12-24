@@ -13,7 +13,7 @@ export function LangSwitcher(props: LangSwitcherProps) {
   const { t, i18n } = useTranslation()
 
   const toggle = async () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+    await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
   }
 
   return (
@@ -22,8 +22,7 @@ export function LangSwitcher(props: LangSwitcherProps) {
       theme={ButtonTheme.CLEAR_INVERTED}
       onClick={toggle}
     >
-      {/* i18next-extract-disable-next-line */}
-      {t(short ? 'Короткий Язык' : 'Язык')}
+      {short ? <span>{t('Короткий Язык')}</span> : <span>{t('Язык')}</span>}
     </Button>
   )
 }
