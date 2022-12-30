@@ -5,8 +5,10 @@
   "Главная": "Main",
   "Загрузка...": "Loading...",
   "Короткий Язык": "En",
+  "Не правильный Логин или Пароль": "Wrong Username or Password",
   "О Сайте": "About us",
   "Страница не найдена": "not found page",
   "Тестовый пример": "Test example",
+  "Форма авторизации": "Authorization form",
   "Язык": "English"
 }

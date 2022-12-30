@@ -11,13 +11,15 @@ export interface ComponentRenderOptions {
   initialState?: DeepPartial<StateSchema>
 }
 
-export function ComponentRender(component: ReactNode, options: ComponentRenderOptions = {}) {
+export function ComponentRender(
+  component: ReactNode,
+  options: ComponentRenderOptions = {},
+) {
   const { route = '/', initialState } = options
   return render(
     <StoreProvider initialState={initialState}>
       <MemoryRouter initialEntries={[route]}>
         <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
-        ,
       </MemoryRouter>
     </StoreProvider>,
   )

@@ -28,6 +28,10 @@ export default ({ config }: Config) => {
     })
   }
 
+  config.plugins?.push(new webpack.DefinePlugin({
+    __IS_DEV__: JSON.stringify(true),
+  }))
+
   config.module?.rules?.push({
     test: /\.svg$/,
     use: ['@svgr/webpack'],
