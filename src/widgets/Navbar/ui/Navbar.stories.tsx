@@ -20,7 +20,9 @@ Light.decorators = [StoreDecorator({})]
 
 export const Auth = Template.bind({})
 Auth.args = {}
-Auth.decorators = [StoreDecorator({ user: { authData: {} } })]
+Auth.decorators = [
+  StoreDecorator({ user: { authData: { username: 'admin' } } }),
+]
 
 export const Dark = Template.bind({})
 Dark.args = {}
