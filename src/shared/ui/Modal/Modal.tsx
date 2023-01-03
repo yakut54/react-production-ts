@@ -1,5 +1,9 @@
 import React, {
-  ReactNode, useCallback, useEffect, useRef, useState,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
 } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from 'shared/ui/Portal/Portal'
@@ -29,7 +33,7 @@ export const Modal = (props: ModalProps) => {
     if (isOpen) {
       setTimeout(() => {
         setIsOpening(true)
-      }, 0)
+      }, 20)
     }
     return () => setIsOpening(false)
   }, [isOpen])
@@ -88,7 +92,10 @@ export const Modal = (props: ModalProps) => {
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
-          <div className={classNames(cls.content, { [cls.isOpening]: isOpening })} onClick={onContentClick}>
+          <div
+            className={classNames(cls.content, { [cls.isOpening]: isOpening })}
+            onClick={onContentClick}
+          >
             {children}
           </div>
         </div>

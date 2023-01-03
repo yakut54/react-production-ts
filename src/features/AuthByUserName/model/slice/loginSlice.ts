@@ -14,9 +14,6 @@ export const loginSlice = createSlice({
   reducers: {
     setUsername: (state, action: PayloadAction<string>) => {
       state.username = action.payload
-
-      console.log('state >> ', state)
-      console.log('state.username >> ', state.username)
     },
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload
