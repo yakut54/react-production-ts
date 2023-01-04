@@ -4,7 +4,7 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
 
-export const createReduxStore = ( initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema> ) => {
+export const createReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     counter: counterReducer,
