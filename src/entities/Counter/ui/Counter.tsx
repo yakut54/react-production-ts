@@ -1,24 +1,32 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { Button } from 'shared/ui/Button/Button'
+import { memo, useCallback, useMemo } from 'react'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 import { counterActions } from '../model/slice/CounterSlice'
 
-export const Counter = () => {
-  const dispatch = useDispatch()
+export const Counter = memo(() => {
+  const dispatch = useAppDispatch()
   const counterValue = useSelector(getCounterValue)
 
-  const increment = () => {
+  const increment = useCallback(() => {
     dispatch(counterActions.increment())
-  }
-  const decrement = () => {
+  }, [dispatch])
+
+  const decrement = useCallback(() => {
     dispatch(counterActions.decrement())
-  }
+  }, [dispatch])
 
   return (
     <div data-testid="value-title">
       <h1>{counterValue}</h1>
-      <Button data-testid="increment-btn" onClick={increment}>++1</Button>
-      <Button data-testid="decrement-btn" onClick={decrement}>--1</Button>
+      <br />
+      <Button data-testid="increment-btn" onClick={increment} theme={ButtonTheme.OUTLINE}>
+        ++1
+      </Button>
+      <Button data-testid="decrement-btn" onClick={decrement} theme={ButtonTheme.OUTLINE}>
+        --1
+      </Button>
     </div>
   )
-}
+})
