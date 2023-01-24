@@ -13,13 +13,9 @@
 }
 
 .collapsed.item {
-  .link {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    transition: all 0.2s;
-  }
-  
+  margin-left: auto;
+  margin-right: auto;
+
   .link {
     opacity: 0;
     width: 0;
@@ -31,9 +27,4 @@
     width: 30px;
     height: 30px;
   }
-}
-
-.collapsed.item{
-  margin-left: auto;
-  margin-right: auto;
 }

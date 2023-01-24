@@ -11,7 +11,9 @@ const initialState: ProfileSchema = {
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    print: () => console.log('profile загрузился УРААА!!!'),
+  },
 })
 
 export const { actions: profileActions } = profileSlice

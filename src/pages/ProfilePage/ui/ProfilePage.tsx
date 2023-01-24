@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { classNames } from 'shared/lib/classNames/classNames'
 import { profileReducer } from 'entities/Profile'
+import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import cls from './ProfilePage.module.scss'
 
 const reducers: ReducerList = {
@@ -17,9 +17,7 @@ const ProfilePage = (props: ProfilePageProps) => {
   const { t } = useTranslation('profile')
 
   return (
-    <DynamicModuleLoader
-      reducers={reducers}
-    >
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount >
       <div className={classNames(cls.ProfilePage, {}, [className])}>
         {t('Станица Профиля')}
       </div>

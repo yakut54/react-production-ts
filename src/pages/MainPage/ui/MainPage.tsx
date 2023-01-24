@@ -8,6 +8,8 @@ const MainPage = () => {
     <div>
       {t('Главная страница')}
       <Counter />
+      <Counter />
+      <Counter />
     </div>
   )
 }
