@@ -17,7 +17,7 @@ const ProfilePage = (props: ProfilePageProps) => {
   const { t } = useTranslation('profile')
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount >
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <div className={classNames(cls.ProfilePage, {}, [className])}>
         {t('Станица Профиля')}
       </div>
