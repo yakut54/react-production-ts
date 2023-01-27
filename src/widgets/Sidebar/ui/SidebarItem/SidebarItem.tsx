@@ -12,7 +12,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation()
-
+  /* i18next-extract-disable-next-line */
   return (
     <AppLink
       to={item.path}

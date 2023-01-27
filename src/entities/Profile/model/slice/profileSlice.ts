@@ -6,13 +6,16 @@ const initialState: ProfileSchema = {
   readonly: false,
   error: undefined,
   data: undefined,
+  testText: 'test text',
 }
 
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
-    print: () => console.log('profile загрузился УРААА!!!'),
+    print: (state) => {
+      state.testText = 'profile загрузился ʕʘ‿ಠʔ'
+    },
   },
 })
 
