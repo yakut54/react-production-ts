@@ -2,10 +2,10 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { BuildOptions } from './types/config'
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
@@ -17,6 +17,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
   ]
 
@@ -24,10 +25,10 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     plugins.push(...[
       new webpack.HotModuleReplacementPlugin(),
       new ReactRefreshPlugin({ overlay: false }),
-      new BundleAnalyzerPlugin({
-        analyzerPort: 5001,
-        openAnalyzer: false,
-      }),
+      // new BundleAnalyzerPlugin({
+      //   analyzerPort: 5001,
+      //   openAnalyzer: false,
+      // }),
     ])
   }
 
