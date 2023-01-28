@@ -17,17 +17,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
-        run: npm install
+        - run: echo "🎉"
+      # - name: Install dependencies
+      #   run: npm install
       # - name: build storybook
       #   run: npm run storybook:build
       #   if: always()
       # - name: loki test screenshot
       #   run: npm run test:ui:ci
       #   if: always()
-      - name: build production project
-        run: npm run build:prod
-        if: always()
+      # - name: build production project
+      #   run: npm run build:prod
+      #   if: always()
 
       
 

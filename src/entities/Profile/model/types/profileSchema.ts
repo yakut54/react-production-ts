@@ -16,5 +16,4 @@ export interface ProfileSchema {
   isLoading: boolean
   error?: string
   readonly: boolean
-  testText: string
 }
