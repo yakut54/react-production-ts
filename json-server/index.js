@@ -12,7 +12,7 @@ server.use(jsonServer.bodyParser);
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
 server.use(async (req, res, next) => {
   await new Promise((res) => {
-    setTimeout(res, 800);
+    setTimeout(res, 300);
   });
   next();
 });
@@ -24,7 +24,7 @@ server.post('/login', (req, res) => {
     const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
     const { users = [] } = db;
 
-    console.log(db);
+    console.log('db >>> ', db);
     const userFromBd = users.find(
       (user) => {
         return user.username === username && user.password === password
