@@ -20,7 +20,7 @@ const ProfilePage = (props: ProfilePageProps) => {
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    // dispatch(fetchProfileData())
   }, [dispatch])
 
   return (
