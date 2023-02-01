@@ -9,11 +9,6 @@
       "id": "2",
       "title": "json-server",
       "userId": "2"
-    },
-    {
-      "username": "admin",
-      "password": "123",
-      "id": "3"
     }
   ],
   "comments": [
@@ -31,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Ираклий",
+    "lastname": "Имбенович",
+    "age": 36,
+    "currency": "RUB",
+    "country": "Belarus",
+    "city": "Тойбахой",
+    "username": "admin",
+    "avatar": "https://i.pinimg.com/736x/0d/10/81/0d10816b51de4ee52e4eaa2846e071f9.jpg"
   }
 }

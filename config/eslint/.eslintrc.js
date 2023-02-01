@@ -44,19 +44,21 @@ module.exports = {
     'i18next/no-literal-string': [
       'error', {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to'],
+        ignoreAttribute: ['data-testid', 'to', 'alt'],
       },
     ],
-    'max-len': ['error', { code: 120, ignoreComments: true }],
+    'max-len': ['error', { code: 126, ignoreComments: true }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'no-param-reassign': 'off',
-    'eol-last': ['error', 'never'],
+    'eol-last': 'off',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [
     {
