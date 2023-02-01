@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { StateSchema } from 'app/providers/StoreProvider'
+import type { StateSchema } from 'app/providers/StoreProvider'
 import { AsyncThunkAction } from '@reduxjs/toolkit'
 import axios, { AxiosStatic } from 'axios'
 

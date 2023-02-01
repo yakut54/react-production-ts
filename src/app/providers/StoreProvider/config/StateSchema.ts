@@ -2,7 +2,7 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
-import { CounterSchema } from 'entities/Counter'
+import type { CounterSchema } from 'entities/Counter'
 import { ProfileSchema } from 'entities/Profile'
 import { UserSchema } from 'entities/User'
 import { LoginSchema } from 'features/AuthByUserName'
@@ -38,4 +38,5 @@ export interface ThunkExtraArg {
 export interface ThunkConfig<T> {
   rejectValue: T
   extra: ThunkExtraArg
+  state: StateSchema
 }
