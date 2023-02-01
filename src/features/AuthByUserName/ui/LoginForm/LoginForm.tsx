@@ -1,15 +1,15 @@
 import { memo, useCallback } from 'react'
-import { Input } from 'shared/ui/Input/Input'
-import { useTranslation } from 'react-i18next'
-import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import { Input } from 'shared/ui/Input/Input'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import {
   DynamicModuleLoader,
   ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName'
@@ -52,13 +52,17 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUserName({ password, username }))
-    if (result.meta.requestStatus) {
+
+    if (result.meta.requestStatus === 'fulfilled') {
       onSuccess()
     }
   }, [onSuccess, dispatch, password, username])
 
   return (
-    <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
+    <DynamicModuleLoader
+      reducers={initialReducers}
+      removeAfterUnmount
+    >
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
         {error && (
